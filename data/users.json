@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Angga Pratama",
+    "email": "angga@example.com"
+  },
+  {
+    "id": 2,
+    "name": "Dewi Lestari",
+    "email": "dewi@example.com"
+  },
+  {
+    "id": 3,
+    "name": "Rizki Hidayat",
+    "email": "rizki@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Nadia Putri",
+    "email": "nadia@example.com"
+  },
+  {
+    "id": 5,
+    "name": "Bagas Saputra",
+    "email": "bagas@example.com"
+  },
+  {
+    "id": 6,
+    "name": "Fajar Maulana",
+    "email": "fajar@example.com"
+  },
+  {
+    "id": 7,
+    "name": "Siti Aisyah",
+    "email": "aisyah@example.com"
+  },
+  {
+    "id": 8,
+    "name": "Ilham Nugroho",
+    "email": "ilham@example.com"
+  },
+  {
+    "id": 9,
+    "name": "Tasya Maharani",
+    "email": "tasya@example.com"
+  },
+  {
+    "id": 10,
+    "name": "Raka Dwipa",
+    "email": "raka@example.com"
+  }
+]
