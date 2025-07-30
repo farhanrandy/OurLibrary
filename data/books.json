@@ -37,7 +37,7 @@
   },
   {
     "id": 7,
-    "title": "You Don\u2019t Know JS",
+    "title": "You Don't Know JS",
     "authorName": "Kyle Simpson",
     "categoryId": 2
   },
@@ -170,7 +170,7 @@
   {
     "id": 29,
     "title": "Hands-On Machine Learning",
-    "authorName": "Aur\u00e9lien G\u00e9ron",
+    "authorName": "Aurlien Gron",
     "categoryId": 10
   },
   {
@@ -211,7 +211,7 @@
   },
   {
     "id": 36,
-    "title": "Man\u2019s Search for Meaning",
+    "title": "Man's Search for Meaning",
     "authorName": "Viktor Frankl",
     "categoryId": 6
   },
