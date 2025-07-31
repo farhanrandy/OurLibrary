@@ -192,28 +192,33 @@ class Controller {
 
   // ==== BOOKS ====
   static async bookHome(req, res) {
-    try {
-    const { userId } = req.query;
+  try {
+    const { userId, search } = req.query; // ⬅️ ambil parameter search juga
 
-    const books = await Book.findAll({
-      include: Category
-    });
+    let books;
+    if (search) {
+      // ⬅️ kalau ada keyword pencarian, pakai static method
+      books = await Book.searchByTitle(search);
+    } else {
+      // ⬅️ default ambil semua buku
+      books = await Book.findAll({ include: Category });
+    }
 
     let profile = null;
     if (userId) {
       profile = await Profile.findOne({
-        where: { UserId: userId }
+        where: { UserId: userId },
+        include: User
       });
     }
-    // console.log('<<<<<<<<<<<<<<<<,',profile,'>>>>>>>>>>>>>>>>>>>>>');
-    
-    res.render('books', { data: books, profile });
+
+    const role = profile?.User?.role || 'guest'; // ⬅️ optional, buat role di view
+    res.render('books', { data: books, profile, userId, role, search }); // ⬅️ kirim search ke EJS biar bisa diisi ulang
   } catch (err) {
-    console.log(err);
+    console.log('Controller error:', err);
     res.send(err);
   }
-
-  }
+}
 
   static async bookGetAdd(req, res) {
     try {
@@ -254,29 +259,69 @@ class Controller {
 
   static async bookGetEdit(req, res) {
     try {
-      // TODO: Render edit form
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
+    const bookId = req.params.bookId;
+    const userId = req.query.userId;
+
+    // Ambil data buku berdasarkan ID
+    const book = await Book.findByPk(bookId);
+    if (!book) return res.status(404).send('Book not found');
+
+    // Ambil semua kategori buat dropdown
+    const categoryData = await Category.findAll();
+
+    res.render('editBook', {
+      book,
+      categoryData,
+      userId
+    });
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
   }
 
   static async bookHandleEdit(req, res) {
     try {
-      // TODO: Handle edit book
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
+    const { userId } = req.query;
+    const bookId = req.params.bookId;
+    const { title, authorName, imageURL, description, CategoryId } = req.body;
+
+    // Cari data buku dulu
+    const book = await Book.findByPk(bookId);
+    if (!book) return res.status(404).send('Book not found');
+
+    // Update nilai-nya
+    book.title = title;
+    book.authorName = authorName;
+    book.imageURL = imageURL;
+    book.description = description;
+    book.CategoryId = Number(CategoryId);
+
+    await book.save(); // Simpan ke DB
+
+    res.redirect(`/books?userId=${userId}`);
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
+
   }
 
   static async bookDelete(req, res) {
-    try {
-      // TODO: Delete book
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
+     try {
+    const { userId } = req.query; // biar bisa redirect balik pakai userId
+    const bookId = req.params.bookId;
+
+    // Cari dulu bukunya buat validasi (optional)
+    const book = await Book.findByPk(bookId);
+    await book.destroy(); // Hapus dari database
+
+    res.redirect(`/books?userId=${userId}`);
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
+
   }
 
   // ==== CATEGORIES ====

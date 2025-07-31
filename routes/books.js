@@ -6,9 +6,9 @@ const preserveUserId = require('../middleware/preserveUserId')
 router.get('/',preserveUserId, Controller.bookHome); // List books
 router.get('/add',preserveUserId, Controller.bookGetAdd); // Show add book form
 router.post('/add',preserveUserId, Controller.bookHandleAdd); // Handle book addition
+router.get('/:bookId/delete', preserveUserId, Controller.bookDelete)
 // router.get('/:bookId', Controller.bookDetail); // Show book detail
-// router.get('/:bookId/edit', Controller.bookGetEdit); // Show edit book form
-// router.post('/:bookId/edit', Controller.bookHandleEdit); // Handle book edit
-// router.get('/:bookId/delete', Controller.bookDelete); // Handle book deletion
+router.get('/:bookId/edit', Controller.bookGetEdit); // Show edit book form
+router.post('/:bookId/edit', Controller.bookHandleEdit); // Handle book edit
 
 module.exports = router;

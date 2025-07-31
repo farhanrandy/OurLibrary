@@ -1,22 +1,25 @@
 'use strict';
 const {
-  Model
+  Model, Op
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Book extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-        Book.belongsTo(models.Category, { foreignKey: 'CategoryId' });
-        Book.belongsToMany(models.User, { through: models.Loan, foreignKey: 'BookId' });
-        Book.hasMany(models.Loan, { foreignKey: 'BookId' });
+   static associate(models) {
+    Book.belongsTo(models.Category, { foreignKey: 'CategoryId' });
+    Book.belongsToMany(models.User, { through: models.Loan, foreignKey: 'BookId' });
+    Book.hasMany(models.Loan, { foreignKey: 'BookId' });
+  }
 
-
-    }
+  static async searchByTitle(title) {
+    return await Book.findAll({
+      where: {
+        title: {
+          [Op.iLike]: `%${title}%`
+        }
+      },
+      include: 'Category'
+    });
+  }
   }
   Book.init({
     title: DataTypes.STRING,
@@ -28,6 +31,24 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Book',
+    hooks: {
+  beforeSave: (book, options) => {
+    if (book.title) {
+      book.title = book.title
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+    }
+
+    if (book.authorName) {
+      book.authorName = book.authorName
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+    }
+  }
+}
+
   });
   return Book;
 };

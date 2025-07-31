@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Book</title>
+</head>
+<body>
+  
+  <h1>Edit Book</h1>
+  <form action="/books/<%= book.id %>/edit?userId=<%= userId %>" method="POST">
+    <label>Title:</label><br>
+    <input type="text" name="title" value="<%= book.title %>" required><br><br>
+
+    <label>Author:</label><br>
+    <input type="text" name="authorName" value="<%= book.authorName %>" required><br><br>
+
+    <label>Image URL:</label><br>
+    <input type="text" name="imageURL" value="<%= book.imageURL %>"><br><br>
+
+    <label>Description:</label><br>
+    <textarea name="description" rows="4" cols="50"><%= book.description %></textarea><br><br>
+
+    <label>Category:</label><br>
+    <select name="CategoryId">
+      <% categoryData.forEach(cat => { %>
+        <option value="<%= cat.id %>" <%= cat.id === book.CategoryId ? 'selected' : '' %>>
+          <%= cat.name %>
+        </option>
+      <% }) %>
+    </select><br><br>
+
+    <button type="submit">Update Book</button>
+  </form>
+</body>
+</html>
