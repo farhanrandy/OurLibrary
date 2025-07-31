@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Add User</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <!-- Optional CSS -->
-  </head>
-  <body>
-    <h1>Add New User</h1>
-    <% if (errors) { %>
+<head>
+  <meta charset="UTF-8">
+  <title>Add User</title>
+  <link rel="stylesheet" href="/styles/addUser.css"><!-- Optional CSS -->
+</head>
+<body>
+  <h1>Add New User</h1>
+   <% if (errors) { %>
     <ul style="color: red">
       <% errors.forEach(error => { %>
       <li><%= error %></li>
       <% }) %>
     </ul>
     <% } %>
-
     <form action="/users/add" method="POST">
       <div>
         <label for="name">Name:</label>

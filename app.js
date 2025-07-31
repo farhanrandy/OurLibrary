@@ -2,6 +2,7 @@ const express = require('express');
 const app = express()
 const port = 3000
 const router = require('./routes/index');
+app.use(express.static('public'));
 
 const session = require('express-session');
 
