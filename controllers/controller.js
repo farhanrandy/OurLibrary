@@ -28,9 +28,9 @@ class Controller {
       where: { email }
     });
 
-    if (!user || user.password !== password) {
-      res.render('login', { error: 'Invalid email or password' });
-    } else {
+   if (!user || !(await bcrypt.compare(password, user.password))) {
+  res.render('login', { error: 'Invalid email or password' });
+} else {
       // Login sukses
       const userId = user.id;
       res.redirect(`/books?userId=${userId}`);
@@ -40,6 +40,20 @@ class Controller {
     res.send(err);
   }
   }
+  static async logoutHandle(req, res) {
+  try {
+    await new Promise((resolve, reject) => {
+      req.session.destroy((err) => {
+        if (err) return reject(err);
+        resolve();
+      });
+    });
+    res.redirect('/login');
+  } catch (err) {
+    console.log('Logout error:', err);
+    res.redirect('/');
+  }
+}
 
   // ==== USERS ====
   static async userHome(req, res) {
