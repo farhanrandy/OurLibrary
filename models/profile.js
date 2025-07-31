@@ -18,7 +18,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   Profile.init({
     address: DataTypes.STRING,
-    phone: DataTypes.STRING,
+    phone: {
+    type: DataTypes.STRING,
+      get() {
+        const plusSixTwo = this.getDataValue('phone');
+        return '+62'.concat(plusSixTwo);
+    }},
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
