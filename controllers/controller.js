@@ -28,6 +28,7 @@ class Controller {
       });
 
       if (!user || !(await bcrypt.compare(password, user.password))) {
+
         res.render("login", { error: "Invalid email or password" });
       } else {
         // Login sukses
@@ -57,7 +58,7 @@ class Controller {
   // ==== USERS ====
   static async userGetAdd(req, res) {
     try {
-      res.render("addUser");
+      res.render("addUser", { errors: null });
     } catch (err) {
       console.log(err);
       res.send(err);
@@ -82,9 +83,14 @@ class Controller {
 
       res.redirect("/login");
     } catch (err) {
+      if (err.name === "SequelizeValidationError") {
+      const errorMessages = err.errors.map(e => e.message);
+      res.render("addUser", { errors: errorMessages });
+    } else {
       console.log(err);
       res.send(err);
     }
+  }
   }
 
   static async userDetail(req, res) {
@@ -229,7 +235,7 @@ class Controller {
       res.send(err);
     }
   }
-  
+
   static async bookBorrowHandle(req, res) {
   try {
     const { userId } = req.query;
