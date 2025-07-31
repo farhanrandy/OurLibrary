@@ -67,8 +67,6 @@ class Controller {
   static async userHandleAdd(req, res) {
     try {
       const { name, email, password, address, phone } = req.body;
-
-      // Buat user baru
       const newUser = await User.create({
         name,
         email,
@@ -76,7 +74,6 @@ class Controller {
         role: "user",
       });
 
-      // Buat profile berdasarkan userId
       await Profile.create({
         address: address,
         phone: phone,
@@ -114,8 +111,6 @@ class Controller {
         }
       ]
     });
-    
-
     res.render("profile", { userData, userId });
   } catch (err) {
     console.log(err);
@@ -169,81 +164,43 @@ class Controller {
     }
   }
 
-  // ==== LOANS ====
-  static async loanHome(req, res) {
-    try {
-      // TODO: List loans
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
-  static async loanGetAdd(req, res) {
-    try {
-      // TODO: Render form add loan
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
-  static async loanHandleAdd(req, res) {
-    try {
-      // TODO: Handle add loan logic
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
-  static async loanDetail(req, res) {
-    try {
-      // TODO: Detail pinjaman
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
   // ==== BOOKS ====
   static async bookHome(req, res) {
-    try {
-      const { userId, search } = req.query; // ⬅️ ambil parameter search juga
+  try {
+    const { userId, search } = req.query;
 
-      let books;
-      if (search) {
-        // ⬅️ kalau ada keyword pencarian, pakai static method
-        books = await Book.searchByTitle(search);
-      } else {
-        // ⬅️ default ambil semua buku
-        books = await Book.findAll({
-          include: [
-            Category,
+    let books;
+    if (search) {
+      books = await Book.searchByTitle(search);
+    } else {
+      books = await Book.findAll({
+        include: [
+          Category,
           {
             model: Loan,
             include: User,
             required: false,
-            attributes: ['id', 'UserId', 'BookId', 'returnDate', 'borrowDate']
-          }],
-        });
-      }
-
-      let profile = null;
-      if (userId) {
-        profile = await Profile.findOne({
-          where: { UserId: userId },
-          include: User,
-        });
-      }
-
-      const role = profile.User.role // ⬅️ optional, buat role di view
-      res.render("books", { data: books, profile, userId, role, search }); // ⬅️ kirim search ke EJS biar bisa diisi ulang
-    } catch (err) {
-      console.log("Controller error:", err);
-      res.send(err);
+            attributes: ['id', 'UserId', 'BookId', 'returnDate', 'borrowDate'],
+          },
+        ],
+      });
     }
+
+    let profile = null;
+    if (userId) {
+      profile = await Profile.findOne({
+        where: { UserId: userId },
+        include: User,
+      });
+    }
+
+    const role = profile.User.role;
+    res.render("books", { data: books, profile, userId, role, search });
+  } catch (err) {
+    console.log("Controller error:", err);
+    res.send(err);
   }
+}
 
   static async bookGetAdd(req, res) {
     try {
@@ -272,39 +229,37 @@ class Controller {
       res.send(err);
     }
   }
+  
   static async bookBorrowHandle(req, res) {
-    try {
-      const { userId } = req.query;
-      const bookId = req.params.bookId;
+  try {
+    const { userId } = req.query;
+    const bookId = req.params.bookId;
 
-      // 1️⃣ Cek apakah buku sedang dipinjam
-      const existingLoan = await Loan.findOne({
-        where: {
-          BookId: bookId,
-          returnDate: null, // berarti belum dikembalikan
-        },
-      });
-
-      if (existingLoan) {
-        // 2️⃣ Kalau udah dipinjam, jangan bisa dipinjam lagi
-        return res.send("This book is currently borrowed.");
-      }
-
-      // 3️⃣ Kalau belum dipinjam, create data peminjaman
-      await Loan.create({
-        UserId: userId,
+    const existingLoan = await Loan.findOne({
+      where: {
         BookId: bookId,
-        borrowDate: new Date(),
         returnDate: null,
-      });
+      },
+    });
 
-      // 4️⃣ Redirect balik ke list buku
-      res.redirect(`/books?userId=${userId}`);
-    } catch (error) {
-      console.log(error);
-      res.send(error);
+    if (existingLoan) {
+      return res.send("This book is currently borrowed.");
     }
+
+    await Loan.create({
+      UserId: userId,
+      BookId: bookId,
+      borrowDate: new Date(),
+      returnDate: null,
+    });
+
+    res.redirect(`/books?userId=${userId}`);
+  } catch (error) {
+    console.log(error);
+    res.send(error);
   }
+}
+
   static async loanHandleReturn(req, res) {
   try {
     const { id } = req.params;
@@ -330,6 +285,7 @@ class Controller {
     res.send(err);
   }
 }
+
   static async bookGetEdit(req, res) {
     try {
       const bookId = req.params.bookId;
