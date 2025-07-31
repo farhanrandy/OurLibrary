@@ -2,350 +2,350 @@
   {
     "title": "The Great Gatsby",
     "authorName": "F. Scott Fitzgerald",
-    "imageURL": "http://example.com/gatsby.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/ab/The_Great_Gatsby_Cover_1925_Retouched.jpg",
     "description": "A story of the Jazz Age.",
     "CategoryId": 1
   },
   {
     "title": "1984",
     "authorName": "George Orwell",
-    "imageURL": "http://example.com/1984.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/0/0c/1984_first_edition_cover.jpg",
     "description": "A dystopian novel.",
     "CategoryId": 2
   },
   {
     "title": "To Kill a Mockingbird",
     "authorName": "Harper Lee",
-    "imageURL": "http://example.com/mockingbird.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
     "description": "A tale of justice.",
     "CategoryId": 3
   },
   {
     "title": "Pride and Prejudice",
     "authorName": "Jane Austen",
-    "imageURL": "http://example.com/pride.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780141199078-L.jpg",
     "description": "A romantic novel.",
     "CategoryId": 4
   },
   {
     "title": "The Catcher in the Rye",
     "authorName": "J.D. Salinger",
-    "imageURL": "http://example.com/catcher.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780316769488-L.jpg",
     "description": "A coming-of-age story.",
     "CategoryId": 5
   },
   {
     "title": "Brave New World",
     "authorName": "Aldous Huxley",
-    "imageURL": "http://example.com/brave.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780060850524-L.jpg",
     "description": "A futuristic society.",
     "CategoryId": 2
   },
   {
     "title": "The Hobbit",
     "authorName": "J.R.R. Tolkien",
-    "imageURL": "http://example.com/hobbit.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
     "description": "An epic adventure.",
     "CategoryId": 6
   },
   {
     "title": "Animal Farm",
     "authorName": "George Orwell",
-    "imageURL": "http://example.com/animal.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780451526342-L.jpg",
     "description": "A political allegory.",
     "CategoryId": 2
   },
   {
     "title": "Lord of the Rings",
     "authorName": "J.R.R. Tolkien",
-    "imageURL": "http://example.com/lotr.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg",
     "description": "A fantasy epic.",
     "CategoryId": 6
   },
   {
     "title": "Jane Eyre",
-    "authorName": "Charlotte Brontë",
-    "imageURL": "http://example.com/jane.jpg",
+    "authorName": "Charlotte Bront\u00eb",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
     "description": "A gothic romance.",
     "CategoryId": 4
   },
   {
     "title": "Dune",
     "authorName": "Frank Herbert",
-    "imageURL": "http://example.com/dune.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg",
     "description": "A sci-fi saga.",
     "CategoryId": 7
   },
   {
     "title": "The Odyssey",
     "authorName": "Homer",
-    "imageURL": "http://example.com/odyssey.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "An epic poem.",
     "CategoryId": 8
   },
   {
     "title": "Fahrenheit 451",
     "authorName": "Ray Bradbury",
-    "imageURL": "http://example.com/fahrenheit.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9781451673319-L.jpg",
     "description": "A book-burning dystopia.",
     "CategoryId": 2
   },
   {
     "title": "Moby Dick",
     "authorName": "Herman Melville",
-    "imageURL": "http://example.com/moby.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9781503280786-L.jpg",
     "description": "A whaling tale.",
     "CategoryId": 9
   },
   {
     "title": "Wuthering Heights",
-    "authorName": "Emily Brontë",
-    "imageURL": "http://example.com/wuthering.jpg",
+    "authorName": "Emily Bront\u00eb",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780141439556-L.jpg",
     "description": "A dark romance.",
     "CategoryId": 4
   },
   {
     "title": "The Road",
     "authorName": "Cormac McCarthy",
-    "imageURL": "http://example.com/road.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A post-apocalyptic journey.",
     "CategoryId": 10
   },
   {
     "title": "Harry Potter",
     "authorName": "J.K. Rowling",
-    "imageURL": "http://example.com/harry.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780439708180-L.jpg",
     "description": "A wizarding adventure.",
     "CategoryId": 6
   },
   {
     "title": "Crime and Punishment",
     "authorName": "Fyodor Dostoevsky",
-    "imageURL": "http://example.com/crime.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A psychological thriller.",
     "CategoryId": 3
   },
   {
     "title": "The Alchemist",
     "authorName": "Paulo Coelho",
-    "imageURL": "http://example.com/alchemist.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg",
     "description": "A philosophical journey.",
     "CategoryId": 5
   },
   {
     "title": "Catch-22",
     "authorName": "Joseph Heller",
-    "imageURL": "http://example.com/catch22.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9781451626650-L.jpg",
     "description": "A war satire.",
     "CategoryId": 10
   },
   {
     "title": "The Da Vinci Code",
     "authorName": "Dan Brown",
-    "imageURL": "http://example.com/davinci.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
     "description": "A mystery thriller.",
     "CategoryId": 12
   },
   {
     "title": "The Shining",
     "authorName": "Stephen King",
-    "imageURL": "http://example.com/shining.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780307743657-L.jpg",
     "description": "A horror classic.",
     "CategoryId": 13
   },
   {
     "title": "Sapiens",
     "authorName": "Yuval Noah Harari",
-    "imageURL": "http://example.com/sapiens.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
     "description": "A history of humankind.",
     "CategoryId": 14
   },
   {
     "title": "Leaves of Grass",
     "authorName": "Walt Whitman",
-    "imageURL": "http://example.com/leaves.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A poetry collection.",
     "CategoryId": 15
   },
   {
     "title": "The Girl with the Dragon Tattoo",
     "authorName": "Stieg Larsson",
-    "imageURL": "http://example.com/dragon.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A gripping mystery.",
     "CategoryId": 12
   },
   {
     "title": "Gone Girl",
     "authorName": "Gillian Flynn",
-    "imageURL": "http://example.com/gone.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A psychological thriller.",
     "CategoryId": 16
   },
   {
     "title": "Charlotte's Web",
     "authorName": "E.B. White",
-    "imageURL": "http://example.com/charlotte.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780064400558-L.jpg",
     "description": "A children's classic.",
     "CategoryId": 17
   },
   {
     "title": "Atomic Habits",
     "authorName": "James Clear",
-    "imageURL": "http://example.com/atomic.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A self-improvement guide.",
     "CategoryId": 18
   },
   {
     "title": "A Brief History of Time",
     "authorName": "Stephen Hawking",
-    "imageURL": "http://example.com/brief.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A science classic.",
     "CategoryId": 19
   },
   {
     "title": "Good Omens",
     "authorName": "Neil Gaiman",
-    "imageURL": "http://example.com/goodomens.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A humorous satire.",
     "CategoryId": 20
   },
   {
     "title": "The Stand",
     "authorName": "Stephen King",
-    "imageURL": "http://example.com/stand.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A post-apocalyptic epic.",
     "CategoryId": 10
   },
   {
     "title": "Treasure Island",
     "authorName": "Robert Louis Stevenson",
-    "imageURL": "http://example.com/treasure.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A pirate adventure.",
     "CategoryId": 9
   },
   {
     "title": "The Iliad",
     "authorName": "Homer",
-    "imageURL": "http://example.com/iliad.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "An epic war poem.",
     "CategoryId": 8
   },
   {
     "title": "Foundation",
     "authorName": "Isaac Asimov",
-    "imageURL": "http://example.com/foundation.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A sci-fi series.",
     "CategoryId": 7
   },
   {
     "title": "Little Women",
     "authorName": "Louisa May Alcott",
-    "imageURL": "http://example.com/little.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A family saga.",
     "CategoryId": 4
   },
   {
     "title": "The Giver",
     "authorName": "Lois Lowry",
-    "imageURL": "http://example.com/giver.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A dystopian tale.",
     "CategoryId": 2
   },
   {
     "title": "A Game of Thrones",
     "authorName": "George R.R. Martin",
-    "imageURL": "http://example.com/game.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780553593716-L.jpg",
     "description": "A fantasy epic.",
     "CategoryId": 6
   },
   {
     "title": "The Brothers Karamazov",
     "authorName": "Fyodor Dostoevsky",
-    "imageURL": "http://example.com/brothers.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A philosophical drama.",
     "CategoryId": 3
   },
   {
     "title": "The Martian",
     "authorName": "Andy Weir",
-    "imageURL": "http://example.com/martian.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780553418026-L.jpg",
     "description": "A sci-fi survival story.",
     "CategoryId": 7
   },
   {
     "title": "Sense and Sensibility",
     "authorName": "Jane Austen",
-    "imageURL": "http://example.com/sense.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A romantic tale.",
     "CategoryId": 4
   },
   {
     "title": "The Outsiders",
     "authorName": "S.E. Hinton",
-    "imageURL": "http://example.com/outsiders.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A coming-of-age story.",
     "CategoryId": 5
   },
   {
     "title": "Dracula",
     "authorName": "Bram Stoker",
-    "imageURL": "http://example.com/dracula.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A vampire classic.",
     "CategoryId": 13
   },
   {
     "title": "The Nightingale",
     "authorName": "Kristin Hannah",
-    "imageURL": "http://example.com/nightingale.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A historical novel.",
     "CategoryId": 11
   },
   {
     "title": "Ender's Game",
     "authorName": "Orson Scott Card",
-    "imageURL": "http://example.com/ender.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A sci-fi military tale.",
     "CategoryId": 7
   },
   {
     "title": "The Secret Garden",
     "authorName": "Frances Hodgson Burnett",
-    "imageURL": "http://example.com/secret.jpg",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780141321066-L.jpg",
     "description": "A children's classic.",
     "CategoryId": 17
   },
   {
     "title": "Meditations",
     "authorName": "Marcus Aurelius",
-    "imageURL": "http://example.com/meditations.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A philosophical work.",
     "CategoryId": 18
   },
   {
     "title": "Neuromancer",
     "authorName": "William Gibson",
-    "imageURL": "http://example.com/neuromancer.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A cyberpunk novel.",
     "CategoryId": 7
   },
   {
     "title": "The Count of Monte Cristo",
     "authorName": "Alexandre Dumas",
-    "imageURL": "http://example.com/monte.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A tale of revenge.",
     "CategoryId": 9
   },
   {
     "title": "Where the Crawdads Sing",
     "authorName": "Delia Owens",
-    "imageURL": "http://example.com/crawdads.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "A nature drama.",
     "CategoryId": 3
   },
   {
     "title": "Slaughterhouse-Five",
     "authorName": "Kurt Vonnegut",
-    "imageURL": "http://example.com/slaughter.jpg",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
     "description": "An anti-war satire.",
     "CategoryId": 20
   }
