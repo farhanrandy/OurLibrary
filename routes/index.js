@@ -9,7 +9,7 @@ const categoriesRoute = require('./categories');
 
 router.get('/', Controller.home);
 router.get('/login', Controller.login)
-router.post('/login', Controller.loginPost)
+router.post('/login', Controller.loginHandle)
 
 router.use('/profiles', profilesRoute);
 router.use('/users', usersRoute);

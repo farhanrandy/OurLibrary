@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+</head>
+<body>
+  <%- include('partials/_nav') %>
+  <h1>Profile Info</h1>
+<a href="/profiles/edit/<%= userData.id %>">
+  <button>Edit Profile</button>
+</a>
+
+  <p>Username: <%= userData.name %></p>
+  <p>Email: <%= userData.email %></p>
+  <p>Address: <%= userData.Profile.address %></p>
+  <p>Phone: <%= userData.Profile.phone %></p>
+</body>
+</html>

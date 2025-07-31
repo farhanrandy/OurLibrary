@@ -13,6 +13,15 @@ class Controller {
   }
   static async login(req, res){
     try {
+      res.render('login')
+    } catch (error) {
+      console.log(error);
+      res.send(error)
+      
+    }
+  }
+  static async loginHandle(req, res){
+    try {
     const { email, password } = req.body;
 
     const user = await User.findOne({
@@ -84,29 +93,64 @@ class Controller {
   // ==== PROFILES ====
   static async profileHome(req, res) {
     try {
-      // TODO: List all profiles
+      const userId = req.query.userId;
+      let userData = await User.findByPk(userId, {include: Profile})
+      // console.log(userData);
+      
+      res.render('profile', {userData, userId})
     } catch (err) {
       console.log(err);
       res.send(err);
     }
   }
 
-  static async profileGetAdd(req, res) {
+  static async profileGetEdit(req, res) {
     try {
-      // TODO: Render add profile form
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
+    const userId = req.params.id;
+
+    const userData = await User.findOne({
+      where: { id: userId },
+      include: Profile
+    });
+
+    res.render('editProfile', {
+      User: userData,
+      Profile: userData.Profile
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
   }
 
-  static async profileHandleAdd(req, res) {
+  static async profileHandleEdit(req, res) {
     try {
-      // TODO: Handle adding profile
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
+    const userId = req.params.id;
+
+    // Ambil data user beserta profil-nya
+    const userData = await User.findOne({
+      where: { id: userId },
+      include: Profile
+    });
+
+    // Update data User
+    userData.name = req.body.name;
+    userData.email = req.body.email;
+    await userData.save();
+
+    // Update data Profile
+    userData.Profile.address = req.body.address;
+    userData.Profile.phone = req.body.phone;
+    await userData.Profile.save();
+
+    res.redirect(`/profiles/${userData.id}?userId=${userData.id}`) // Balik ke halaman profil setelah update
+
+  } catch (err) {
+    console.error(err);
+    res.send(err);
+  }
+
   }
 
   // ==== LOANS ====
@@ -161,7 +205,7 @@ class Controller {
         where: { UserId: userId }
       });
     }
-    console.log();
+    // console.log('<<<<<<<<<<<<<<<<,',profile,'>>>>>>>>>>>>>>>>>>>>>');
     
     res.render('books', { data: books, profile });
   } catch (err) {
@@ -173,7 +217,8 @@ class Controller {
 
   static async bookGetAdd(req, res) {
     try {
-      // TODO: Render form add book
+      let categoryData = await Category.findAll()
+      res.render('addBook', {categoryData})
     } catch (err) {
       console.log(err);
       res.send(err);
@@ -182,7 +227,16 @@ class Controller {
 
   static async bookHandleAdd(req, res) {
     try {
-      // TODO: Handle add book
+      const userId = req.query.userId
+      const { title, authorName, imageURL, description, CategoryId } = req.body;
+    await Book.create({
+      title,
+      authorName,
+      imageURL,
+      description,
+      CategoryId: Number(CategoryId)
+    });
+    res.redirect(`/books?userId=${userId}`);
     } catch (err) {
       console.log(err);
       res.send(err);
