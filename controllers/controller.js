@@ -1,6 +1,6 @@
 const { where } = require('sequelize');
 const { User, Profile, Loan, Book, Category } = require('../models/index');
-
+const bcrypt = require('bcryptjs');
 class Controller {
   // Home route
   static async home(req, res) {
