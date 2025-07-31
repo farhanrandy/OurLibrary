@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const { User, Profile, Loan, Book, Category } = require('../models/index');
 
 class Controller {
@@ -12,13 +13,6 @@ class Controller {
   }
   static async login(req, res){
     try {
-      res.render('login')
-    } catch (error) {
-      console.log(err);
-      res.send(err)
-    }
-  }
-  static async loginPost(req, res){
     const { email, password } = req.body;
 
     const user = await User.findOne({
@@ -26,16 +20,16 @@ class Controller {
     });
 
     if (!user || user.password !== password) {
-      // Email tidak ditemukan atau password salah
       res.render('login', { error: 'Invalid email or password' });
     } else {
       // Login sukses
-      // TODO: Tambahkan session kalau perlu
-      res.redirect('/');
+      const userId = user.id;
+      res.redirect(`/books?userId=${userId}`);
     }
   } catch (err) {
     console.log(err);
     res.send(err);
+  }
   }
 
   // ==== USERS ====
@@ -58,12 +52,20 @@ class Controller {
   }
 
   static async userHandleAdd(req, res) {
-      try {
-        const { name, email, password } = req.body;
+     try {
+    const { name, email, password, address, phone } = req.body;
 
-        const newUser = await User.create({ name, email, password, role: "user" });
+    // Buat user baru
+    const newUser = await User.create({ name, email, password, role: "user" });
 
-        res.redirect('/login');
+    // Buat profile berdasarkan userId
+    await Profile.create({
+      address: address,
+      phone: phone,
+      UserId: newUser.id
+    });
+
+    res.redirect('/login');
   } catch (err) {
     console.log(err);
     res.send(err);
@@ -147,12 +149,26 @@ class Controller {
   // ==== BOOKS ====
   static async bookHome(req, res) {
     try {
-      let data = await Book.findAll()
-      res.render('books',{data})
-    } catch (err) {
-      console.log(err);
-      res.send(err);
+    const { userId } = req.query;
+
+    const books = await Book.findAll({
+      include: Category
+    });
+
+    let profile = null;
+    if (userId) {
+      profile = await Profile.findOne({
+        where: { UserId: userId }
+      });
     }
+    console.log();
+    
+    res.render('books', { data: books, profile });
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
+
   }
 
   static async bookGetAdd(req, res) {

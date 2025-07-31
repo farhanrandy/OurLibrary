@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book List</title>
+</head>
+<body>
+    <%- include('partials/_nav') %>
+  <h1>Book Collection</h1>
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach((book, index) => { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= book.title %></td>
+          <td><%= book.authorName %></td>
+          <td>
+            <img src="<%= book.imageURL %>" alt="cover" width="100">
+          </td>
+          <td><%= book.description %></td>
+          <td><%= book.Category.name %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+</body>
+</html>
