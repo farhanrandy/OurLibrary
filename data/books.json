@@ -1,52 +1,352 @@
 [
-  {"title": "The Great Gatsby", "authorName": "F. Scott Fitzgerald", "categoryId": 1, "imageURL": "http://example.com/gatsby.jpg", "description": "A story of the Jazz Age."},
-  {"title": "1984", "authorName": "George Orwell", "categoryId": 2, "imageURL": "http://example.com/1984.jpg", "description": "A dystopian novel."},
-  {"title": "To Kill a Mockingbird", "authorName": "Harper Lee", "categoryId": 3, "imageURL": "http://example.com/mockingbird.jpg", "description": "A tale of justice."},
-  {"title": "Pride and Prejudice", "authorName": "Jane Austen", "categoryId": 4, "imageURL": "http://example.com/pride.jpg", "description": "A romantic novel."},
-  {"title": "The Catcher in the Rye", "authorName": "J.D. Salinger", "categoryId": 5, "imageURL": "http://example.com/catcher.jpg", "description": "A coming-of-age story."},
-  {"title": "Brave New World", "authorName": "Aldous Huxley", "categoryId": 2, "imageURL": "http://example.com/brave.jpg", "description": "A futuristic society."},
-  {"title": "The Hobbit", "authorName": "J.R.R. Tolkien", "categoryId": 6, "imageURL": "http://example.com/hobbit.jpg", "description": "An epic adventure."},
-  {"title": "Animal Farm", "authorName": "George Orwell", "categoryId": 2, "imageURL": "http://example.com/animal.jpg", "description": "A political allegory."},
-  {"title": "Lord of the Rings", "authorName": "J.R.R. Tolkien", "categoryId": 6, "imageURL": "http://example.com/lotr.jpg", "description": "A fantasy epic."},
-  {"title": "Jane Eyre", "authorName": "Charlotte Brontë", "categoryId": 4, "imageURL": "http://example.com/jane.jpg", "description": "A gothic romance."},
-  {"title": "Dune", "authorName": "Frank Herbert", "categoryId": 7, "imageURL": "http://example.com/dune.jpg", "description": "A sci-fi saga."},
-  {"title": "The Odyssey", "authorName": "Homer", "categoryId": 8, "imageURL": "http://example.com/odyssey.jpg", "description": "An epic poem."},
-  {"title": "Fahrenheit 451", "authorName": "Ray Bradbury", "categoryId": 2, "imageURL": "http://example.com/fahrenheit.jpg", "description": "A book-burning dystopia."},
-  {"title": "Moby Dick", "authorName": "Herman Melville", "categoryId": 9, "imageURL": "http://example.com/moby.jpg", "description": "A whaling tale."},
-  {"title": "Wuthering Heights", "authorName": "Emily Brontë", "categoryId": 4, "imageURL": "http://example.com/wuthering.jpg", "description": "A dark romance."},
-  {"title": "The Road", "authorName": "Cormac McCarthy", "categoryId": 10, "imageURL": "http://example.com/road.jpg", "description": "A post-apocalyptic journey."},
-  {"title": "Harry Potter", "authorName": "J.K. Rowling", "categoryId": 6, "imageURL": "http://example.com/harry.jpg", "description": "A wizarding adventure."},
-  {"title": "Crime and Punishment", "authorName": "Fyodor Dostoevsky", "categoryId": 3, "imageURL": "http://example.com/crime.jpg", "description": "A psychological thriller."},
-  {"title": "The Alchemist", "authorName": "Paulo Coelho", "categoryId": 5, "imageURL": "http://example.com/alchemist.jpg", "description": "A philosophical journey."},
-  {"title": "Catch-22", "authorName": "Joseph Heller", "categoryId": 10, "imageURL": "http://example.com/catch22.jpg", "description": "A war satire."},
-  {"title": "The Da Vinci Code", "authorName": "Dan Brown", "categoryId": 12, "imageURL": "http://example.com/davinci.jpg", "description": "A mystery thriller."},
-  {"title": "The Shining", "authorName": "Stephen King", "categoryId": 13, "imageURL": "http://example.com/shining.jpg", "description": "A horror classic."},
-  {"title": "Sapiens", "authorName": "Yuval Noah Harari", "categoryId": 14, "imageURL": "http://example.com/sapiens.jpg", "description": "A history of humankind."},
-  {"title": "Leaves of Grass", "authorName": "Walt Whitman", "categoryId": 15, "imageURL": "http://example.com/leaves.jpg", "description": "A poetry collection."},
-  {"title": "The Girl with the Dragon Tattoo", "authorName": "Stieg Larsson", "categoryId": 12, "imageURL": "http://example.com/dragon.jpg", "description": "A gripping mystery."},
-  {"title": "Gone Girl", "authorName": "Gillian Flynn", "categoryId": 16, "imageURL": "http://example.com/gone.jpg", "description": "A psychological thriller."},
-  {"title": "Charlotte's Web", "authorName": "E.B. White", "categoryId": 17, "imageURL": "http://example.com/charlotte.jpg", "description": "A children's classic."},
-  {"title": "Atomic Habits", "authorName": "James Clear", "categoryId": 18, "imageURL": "http://example.com/atomic.jpg", "description": "A self-improvement guide."},
-  {"title": "A Brief History of Time", "authorName": "Stephen Hawking", "categoryId": 19, "imageURL": "http://example.com/brief.jpg", "description": "A science classic."},
-  {"title": "Good Omens", "authorName": "Neil Gaiman", "categoryId": 20, "imageURL": "http://example.com/goodomens.jpg", "description": "A humorous satire."},
-  {"title": "The Stand", "authorName": "Stephen King", "categoryId": 10, "imageURL": "http://example.com/stand.jpg", "description": "A post-apocalyptic epic."},
-  {"title": "Treasure Island", "authorName": "Robert Louis Stevenson", "categoryId": 9, "imageURL": "http://example.com/treasure.jpg", "description": "A pirate adventure."},
-  {"title": "The Iliad", "authorName": "Homer", "categoryId": 8, "imageURL": "http://example.com/iliad.jpg", "description": "An epic war poem."},
-  {"title": "Foundation", "authorName": "Isaac Asimov", "categoryId": 7, "imageURL": "http://example.com/foundation.jpg", "description": "A sci-fi series."},
-  {"title": "Little Women", "authorName": "Louisa May Alcott", "categoryId": 4, "imageURL": "http://example.com/little.jpg", "description": "A family saga."},
-  {"title": "The Giver", "authorName": "Lois Lowry", "categoryId": 2, "imageURL": "http://example.com/giver.jpg", "description": "A dystopian tale."},
-  {"title": "A Game of Thrones", "authorName": "George R.R. Martin", "categoryId": 6, "imageURL": "http://example.com/game.jpg", "description": "A fantasy epic."},
-  {"title": "The Brothers Karamazov", "authorName": "Fyodor Dostoevsky", "categoryId": 3, "imageURL": "http://example.com/brothers.jpg", "description": "A philosophical drama."},
-  {"title": "The Martian", "authorName": "Andy Weir", "categoryId": 7, "imageURL": "http://example.com/martian.jpg", "description": "A sci-fi survival story."},
-  {"title": "Sense and Sensibility", "authorName": "Jane Austen", "categoryId": 4, "imageURL": "http://example.com/sense.jpg", "description": "A romantic tale."},
-  {"title": "The Outsiders", "authorName": "S.E. Hinton", "categoryId": 5, "imageURL": "http://example.com/outsiders.jpg", "description": "A coming-of-age story."},
-  {"title": "Dracula", "authorName": "Bram Stoker", "categoryId": 13, "imageURL": "http://example.com/dracula.jpg", "description": "A vampire classic."},
-  {"title": "The Nightingale", "authorName": "Kristin Hannah", "categoryId": 11, "imageURL": "http://example.com/nightingale.jpg", "description": "A historical novel."},
-  {"title": "Ender's Game", "authorName": "Orson Scott Card", "categoryId": 7, "imageURL": "http://example.com/ender.jpg", "description": "A sci-fi military tale."},
-  {"title": "The Secret Garden", "authorName": "Frances Hodgson Burnett", "categoryId": 17, "imageURL": "http://example.com/secret.jpg", "description": "A children's classic."},
-  {"title": "Meditations", "authorName": "Marcus Aurelius", "categoryId": 18, "imageURL": "http://example.com/meditations.jpg", "description": "A philosophical work."},
-  {"title": "Neuromancer", "authorName": "William Gibson", "categoryId": 7, "imageURL": "http://example.com/neuromancer.jpg", "description": "A cyberpunk novel."},
-  {"title": "The Count of Monte Cristo", "authorName": "Alexandre Dumas", "categoryId": 9, "imageURL": "http://example.com/monte.jpg", "description": "A tale of revenge."},
-  {"title": "Where the Crawdads Sing", "authorName": "Delia Owens", "categoryId": 3, "imageURL": "http://example.com/crawdads.jpg", "description": "A nature drama."},
-  {"title": "Slaughterhouse-Five", "authorName": "Kurt Vonnegut", "categoryId": 20, "imageURL": "http://example.com/slaughter.jpg", "description": "An anti-war satire."}
+  {
+    "title": "The Great Gatsby",
+    "authorName": "F. Scott Fitzgerald",
+    "imageURL": "http://example.com/gatsby.jpg",
+    "description": "A story of the Jazz Age.",
+    "CategoryId": 1
+  },
+  {
+    "title": "1984",
+    "authorName": "George Orwell",
+    "imageURL": "http://example.com/1984.jpg",
+    "description": "A dystopian novel.",
+    "CategoryId": 2
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "authorName": "Harper Lee",
+    "imageURL": "http://example.com/mockingbird.jpg",
+    "description": "A tale of justice.",
+    "CategoryId": 3
+  },
+  {
+    "title": "Pride and Prejudice",
+    "authorName": "Jane Austen",
+    "imageURL": "http://example.com/pride.jpg",
+    "description": "A romantic novel.",
+    "CategoryId": 4
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "authorName": "J.D. Salinger",
+    "imageURL": "http://example.com/catcher.jpg",
+    "description": "A coming-of-age story.",
+    "CategoryId": 5
+  },
+  {
+    "title": "Brave New World",
+    "authorName": "Aldous Huxley",
+    "imageURL": "http://example.com/brave.jpg",
+    "description": "A futuristic society.",
+    "CategoryId": 2
+  },
+  {
+    "title": "The Hobbit",
+    "authorName": "J.R.R. Tolkien",
+    "imageURL": "http://example.com/hobbit.jpg",
+    "description": "An epic adventure.",
+    "CategoryId": 6
+  },
+  {
+    "title": "Animal Farm",
+    "authorName": "George Orwell",
+    "imageURL": "http://example.com/animal.jpg",
+    "description": "A political allegory.",
+    "CategoryId": 2
+  },
+  {
+    "title": "Lord of the Rings",
+    "authorName": "J.R.R. Tolkien",
+    "imageURL": "http://example.com/lotr.jpg",
+    "description": "A fantasy epic.",
+    "CategoryId": 6
+  },
+  {
+    "title": "Jane Eyre",
+    "authorName": "Charlotte Brontë",
+    "imageURL": "http://example.com/jane.jpg",
+    "description": "A gothic romance.",
+    "CategoryId": 4
+  },
+  {
+    "title": "Dune",
+    "authorName": "Frank Herbert",
+    "imageURL": "http://example.com/dune.jpg",
+    "description": "A sci-fi saga.",
+    "CategoryId": 7
+  },
+  {
+    "title": "The Odyssey",
+    "authorName": "Homer",
+    "imageURL": "http://example.com/odyssey.jpg",
+    "description": "An epic poem.",
+    "CategoryId": 8
+  },
+  {
+    "title": "Fahrenheit 451",
+    "authorName": "Ray Bradbury",
+    "imageURL": "http://example.com/fahrenheit.jpg",
+    "description": "A book-burning dystopia.",
+    "CategoryId": 2
+  },
+  {
+    "title": "Moby Dick",
+    "authorName": "Herman Melville",
+    "imageURL": "http://example.com/moby.jpg",
+    "description": "A whaling tale.",
+    "CategoryId": 9
+  },
+  {
+    "title": "Wuthering Heights",
+    "authorName": "Emily Brontë",
+    "imageURL": "http://example.com/wuthering.jpg",
+    "description": "A dark romance.",
+    "CategoryId": 4
+  },
+  {
+    "title": "The Road",
+    "authorName": "Cormac McCarthy",
+    "imageURL": "http://example.com/road.jpg",
+    "description": "A post-apocalyptic journey.",
+    "CategoryId": 10
+  },
+  {
+    "title": "Harry Potter",
+    "authorName": "J.K. Rowling",
+    "imageURL": "http://example.com/harry.jpg",
+    "description": "A wizarding adventure.",
+    "CategoryId": 6
+  },
+  {
+    "title": "Crime and Punishment",
+    "authorName": "Fyodor Dostoevsky",
+    "imageURL": "http://example.com/crime.jpg",
+    "description": "A psychological thriller.",
+    "CategoryId": 3
+  },
+  {
+    "title": "The Alchemist",
+    "authorName": "Paulo Coelho",
+    "imageURL": "http://example.com/alchemist.jpg",
+    "description": "A philosophical journey.",
+    "CategoryId": 5
+  },
+  {
+    "title": "Catch-22",
+    "authorName": "Joseph Heller",
+    "imageURL": "http://example.com/catch22.jpg",
+    "description": "A war satire.",
+    "CategoryId": 10
+  },
+  {
+    "title": "The Da Vinci Code",
+    "authorName": "Dan Brown",
+    "imageURL": "http://example.com/davinci.jpg",
+    "description": "A mystery thriller.",
+    "CategoryId": 12
+  },
+  {
+    "title": "The Shining",
+    "authorName": "Stephen King",
+    "imageURL": "http://example.com/shining.jpg",
+    "description": "A horror classic.",
+    "CategoryId": 13
+  },
+  {
+    "title": "Sapiens",
+    "authorName": "Yuval Noah Harari",
+    "imageURL": "http://example.com/sapiens.jpg",
+    "description": "A history of humankind.",
+    "CategoryId": 14
+  },
+  {
+    "title": "Leaves of Grass",
+    "authorName": "Walt Whitman",
+    "imageURL": "http://example.com/leaves.jpg",
+    "description": "A poetry collection.",
+    "CategoryId": 15
+  },
+  {
+    "title": "The Girl with the Dragon Tattoo",
+    "authorName": "Stieg Larsson",
+    "imageURL": "http://example.com/dragon.jpg",
+    "description": "A gripping mystery.",
+    "CategoryId": 12
+  },
+  {
+    "title": "Gone Girl",
+    "authorName": "Gillian Flynn",
+    "imageURL": "http://example.com/gone.jpg",
+    "description": "A psychological thriller.",
+    "CategoryId": 16
+  },
+  {
+    "title": "Charlotte's Web",
+    "authorName": "E.B. White",
+    "imageURL": "http://example.com/charlotte.jpg",
+    "description": "A children's classic.",
+    "CategoryId": 17
+  },
+  {
+    "title": "Atomic Habits",
+    "authorName": "James Clear",
+    "imageURL": "http://example.com/atomic.jpg",
+    "description": "A self-improvement guide.",
+    "CategoryId": 18
+  },
+  {
+    "title": "A Brief History of Time",
+    "authorName": "Stephen Hawking",
+    "imageURL": "http://example.com/brief.jpg",
+    "description": "A science classic.",
+    "CategoryId": 19
+  },
+  {
+    "title": "Good Omens",
+    "authorName": "Neil Gaiman",
+    "imageURL": "http://example.com/goodomens.jpg",
+    "description": "A humorous satire.",
+    "CategoryId": 20
+  },
+  {
+    "title": "The Stand",
+    "authorName": "Stephen King",
+    "imageURL": "http://example.com/stand.jpg",
+    "description": "A post-apocalyptic epic.",
+    "CategoryId": 10
+  },
+  {
+    "title": "Treasure Island",
+    "authorName": "Robert Louis Stevenson",
+    "imageURL": "http://example.com/treasure.jpg",
+    "description": "A pirate adventure.",
+    "CategoryId": 9
+  },
+  {
+    "title": "The Iliad",
+    "authorName": "Homer",
+    "imageURL": "http://example.com/iliad.jpg",
+    "description": "An epic war poem.",
+    "CategoryId": 8
+  },
+  {
+    "title": "Foundation",
+    "authorName": "Isaac Asimov",
+    "imageURL": "http://example.com/foundation.jpg",
+    "description": "A sci-fi series.",
+    "CategoryId": 7
+  },
+  {
+    "title": "Little Women",
+    "authorName": "Louisa May Alcott",
+    "imageURL": "http://example.com/little.jpg",
+    "description": "A family saga.",
+    "CategoryId": 4
+  },
+  {
+    "title": "The Giver",
+    "authorName": "Lois Lowry",
+    "imageURL": "http://example.com/giver.jpg",
+    "description": "A dystopian tale.",
+    "CategoryId": 2
+  },
+  {
+    "title": "A Game of Thrones",
+    "authorName": "George R.R. Martin",
+    "imageURL": "http://example.com/game.jpg",
+    "description": "A fantasy epic.",
+    "CategoryId": 6
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "authorName": "Fyodor Dostoevsky",
+    "imageURL": "http://example.com/brothers.jpg",
+    "description": "A philosophical drama.",
+    "CategoryId": 3
+  },
+  {
+    "title": "The Martian",
+    "authorName": "Andy Weir",
+    "imageURL": "http://example.com/martian.jpg",
+    "description": "A sci-fi survival story.",
+    "CategoryId": 7
+  },
+  {
+    "title": "Sense and Sensibility",
+    "authorName": "Jane Austen",
+    "imageURL": "http://example.com/sense.jpg",
+    "description": "A romantic tale.",
+    "CategoryId": 4
+  },
+  {
+    "title": "The Outsiders",
+    "authorName": "S.E. Hinton",
+    "imageURL": "http://example.com/outsiders.jpg",
+    "description": "A coming-of-age story.",
+    "CategoryId": 5
+  },
+  {
+    "title": "Dracula",
+    "authorName": "Bram Stoker",
+    "imageURL": "http://example.com/dracula.jpg",
+    "description": "A vampire classic.",
+    "CategoryId": 13
+  },
+  {
+    "title": "The Nightingale",
+    "authorName": "Kristin Hannah",
+    "imageURL": "http://example.com/nightingale.jpg",
+    "description": "A historical novel.",
+    "CategoryId": 11
+  },
+  {
+    "title": "Ender's Game",
+    "authorName": "Orson Scott Card",
+    "imageURL": "http://example.com/ender.jpg",
+    "description": "A sci-fi military tale.",
+    "CategoryId": 7
+  },
+  {
+    "title": "The Secret Garden",
+    "authorName": "Frances Hodgson Burnett",
+    "imageURL": "http://example.com/secret.jpg",
+    "description": "A children's classic.",
+    "CategoryId": 17
+  },
+  {
+    "title": "Meditations",
+    "authorName": "Marcus Aurelius",
+    "imageURL": "http://example.com/meditations.jpg",
+    "description": "A philosophical work.",
+    "CategoryId": 18
+  },
+  {
+    "title": "Neuromancer",
+    "authorName": "William Gibson",
+    "imageURL": "http://example.com/neuromancer.jpg",
+    "description": "A cyberpunk novel.",
+    "CategoryId": 7
+  },
+  {
+    "title": "The Count of Monte Cristo",
+    "authorName": "Alexandre Dumas",
+    "imageURL": "http://example.com/monte.jpg",
+    "description": "A tale of revenge.",
+    "CategoryId": 9
+  },
+  {
+    "title": "Where the Crawdads Sing",
+    "authorName": "Delia Owens",
+    "imageURL": "http://example.com/crawdads.jpg",
+    "description": "A nature drama.",
+    "CategoryId": 3
+  },
+  {
+    "title": "Slaughterhouse-Five",
+    "authorName": "Kurt Vonnegut",
+    "imageURL": "http://example.com/slaughter.jpg",
+    "description": "An anti-war satire.",
+    "CategoryId": 20
+  }
 ]

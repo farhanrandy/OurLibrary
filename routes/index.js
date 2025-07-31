@@ -1,5 +1,5 @@
 const express = require('express');
-const Controller = require('../controllers/controllers');
+const Controller = require('../controllers/controller');
 const router = express.Router();
 const profilesRoute = require('./profiles');
 const usersRoute = require('./users');
@@ -8,6 +8,8 @@ const booksRoute = require('./books');
 const categoriesRoute = require('./categories');
 
 router.get('/', Controller.home);
+router.get('/login', Controller.login)
+router.post('/login', Controller.loginPost)
 
 router.use('/profiles', profilesRoute);
 router.use('/users', usersRoute);

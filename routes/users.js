@@ -1,10 +1,10 @@
 const express = require('express');
-const Controller = require('../controllers/controllers');
+const Controller = require('../controllers/controller');
 const router = express.Router();
 
-router.get('/', Controller.userHome); // List users
+// router.get('/', Controller.userHome); // List users
 router.get('/add', Controller.userGetAdd); // Show add user form
 router.post('/add', Controller.userHandleAdd); // Handle user addition
-router.get('/:userId', Controller.userDetail); // Show user detail
+// router.get('/:userId', Controller.userDetail); // Show user detail
 
 module.exports = router;
