@@ -1,0 +1,12 @@
+[
+  {"address": "Jl. Merdeka 1", "phone": "08123456701", "userId": 1},
+  {"address": "Jl. Sudirman 2", "phone": "08123456702", "userId": 2},
+  {"address": "Jl. Gatot Subroto 3", "phone": "08123456703", "userId": 3},
+  {"address": "Jl. Thamrin 4", "phone": "08123456704", "userId": 4},
+  {"address": "Jl. MH Thamrin 5", "phone": "08123456705", "userId": 5},
+  {"address": "Jl. Senayan 6", "phone": "08123456706", "userId": 6},
+  {"address": "Jl. Kuningan 7", "phone": "08123456707", "userId": 7},
+  {"address": "Jl. Pantai Indah 8", "phone": "08123456708", "userId": 8},
+  {"address": "Jl. Raya Bogor 9", "phone": "08123456709", "userId": 9},
+  {"address": "Jl. Daan Mogot 10", "phone": "08123456710", "userId": 10}
+]

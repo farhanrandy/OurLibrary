@@ -1,42 +1,22 @@
 [
-  {
-    "id": 1,
-    "name": "Programming"
-  },
-  {
-    "id": 2,
-    "name": "Web Development"
-  },
-  {
-    "id": 3,
-    "name": "Self Improvement"
-  },
-  {
-    "id": 4,
-    "name": "Data Science"
-  },
-  {
-    "id": 5,
-    "name": "Design"
-  },
-  {
-    "id": 6,
-    "name": "Psychology"
-  },
-  {
-    "id": 7,
-    "name": "Business"
-  },
-  {
-    "id": 8,
-    "name": "Fiction"
-  },
-  {
-    "id": 9,
-    "name": "Education"
-  },
-  {
-    "id": 10,
-    "name": "AI & Machine Learning"
-  }
+  {"name": "Classic"},
+  {"name": "Dystopian"},
+  {"name": "Drama"},
+  {"name": "Romance"},
+  {"name": "Coming-of-Age"},
+  {"name": "Fantasy"},
+  {"name": "Science Fiction"},
+  {"name": "Mythology"},
+  {"name": "Adventure"},
+  {"name": "Post-Apocalyptic"},
+  {"name": "Historical"},
+  {"name": "Mystery"},
+  {"name": "Horror"},
+  {"name": "Biography"},
+  {"name": "Poetry"},
+  {"name": "Thriller"},
+  {"name": "Children"},
+  {"name": "Self-Help"},
+  {"name": "Science"},
+  {"name": "Satire"}
 ]

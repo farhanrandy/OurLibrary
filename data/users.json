@@ -1,52 +1,12 @@
 [
-  {
-    "id": 1,
-    "name": "Angga Pratama",
-    "email": "angga@example.com"
-  },
-  {
-    "id": 2,
-    "name": "Dewi Lestari",
-    "email": "dewi@example.com"
-  },
-  {
-    "id": 3,
-    "name": "Rizki Hidayat",
-    "email": "rizki@example.com"
-  },
-  {
-    "id": 4,
-    "name": "Nadia Putri",
-    "email": "nadia@example.com"
-  },
-  {
-    "id": 5,
-    "name": "Bagas Saputra",
-    "email": "bagas@example.com"
-  },
-  {
-    "id": 6,
-    "name": "Fajar Maulana",
-    "email": "fajar@example.com"
-  },
-  {
-    "id": 7,
-    "name": "Siti Aisyah",
-    "email": "aisyah@example.com"
-  },
-  {
-    "id": 8,
-    "name": "Ilham Nugroho",
-    "email": "ilham@example.com"
-  },
-  {
-    "id": 9,
-    "name": "Tasya Maharani",
-    "email": "tasya@example.com"
-  },
-  {
-    "id": 10,
-    "name": "Raka Dwipa",
-    "email": "raka@example.com"
-  }
+  {"name": "Ahmad", "email": "ahmad@example.com", "password": "pass123", "role": "user"},
+  {"name": "Budi", "email": "budi@example.com", "password": "pass124", "role": "user"},
+  {"name": "Citra", "email": "citra@example.com", "password": "pass125", "role": "admin"},
+  {"name": "Dedi", "email": "dedi@example.com", "password": "pass126", "role": "user"},
+  {"name": "Eka", "email": "eka@example.com", "password": "pass127", "role": "user"},
+  {"name": "Fani", "email": "fani@example.com", "password": "pass128", "role": "user"},
+  {"name": "Gita", "email": "gita@example.com", "password": "pass129", "role": "admin"},
+  {"name": "Hadi", "email": "hadi@example.com", "password": "pass130", "role": "user"},
+  {"name": "Indah", "email": "indah@example.com", "password": "pass131", "role": "user"},
+  {"name": "Joko", "email": "joko@example.com", "password": "pass132", "role": "user"}
 ]
