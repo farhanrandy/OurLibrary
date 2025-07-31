@@ -55,15 +55,6 @@ class Controller {
   }
 
   // ==== USERS ====
-  static async userHome(req, res) {
-    try {
-      // TODO: Fetch and render list of users
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
   static async userGetAdd(req, res) {
     try {
       res.render("addUser");
@@ -126,27 +117,6 @@ class Controller {
     
 
     res.render("profile", { userData, userId });
-  } catch (err) {
-    console.log(err);
-    res.send(err);
-  }
-}
-
-  
-  static async loanHandleReturn(req, res) {
-  try {
-    const loanId = req.params.id;
-    const userId = req.query.userId;
-
-    const loan = await Loan.findByPk(loanId);
-    if (!loan || loan.returnDate) {
-      return res.send("Loan not found or already returned.");
-    }
-
-    loan.returnDate = new Date(); // tandai sudah dikembalikan
-    await loan.save();
-
-    res.redirect(`/profiles/${userId}?userId=${userId}`);
   } catch (err) {
     console.log(err);
     res.send(err);
@@ -250,14 +220,12 @@ class Controller {
         books = await Book.findAll({
           include: [
             Category,
-            {
-              model: Loan,
-              where: {
-                returnDate: null,
-              },
-              required: false, // ⬅️ penting biar book tanpa loan tetap tampil
-            },
-          ],
+          {
+            model: Loan,
+            include: User,
+            required: false,
+            attributes: ['id', 'UserId', 'BookId', 'returnDate', 'borrowDate']
+          }],
         });
       }
 
@@ -269,7 +237,7 @@ class Controller {
         });
       }
 
-      const role = profile?.User?.role || "guest"; // ⬅️ optional, buat role di view
+      const role = profile.User.role // ⬅️ optional, buat role di view
       res.render("books", { data: books, profile, userId, role, search }); // ⬅️ kirim search ke EJS biar bisa diisi ulang
     } catch (err) {
       console.log("Controller error:", err);
@@ -337,7 +305,31 @@ class Controller {
       res.send(error);
     }
   }
+  static async loanHandleReturn(req, res) {
+  try {
+    const { id } = req.params;
+    const { userId } = req.query;
 
+    const loan = await Loan.findOne({
+      where: {
+        id,
+        returnDate: null
+      }
+    });
+
+    if (!loan) {
+      return res.send("Loan not found or already returned.");
+    }
+
+    loan.returnDate = new Date();
+    await loan.save();
+
+    res.redirect(`/books/?userId=${userId}`);
+  } catch (err) {
+    console.log("Return Error:", err);
+    res.send(err);
+  }
+}
   static async bookGetEdit(req, res) {
     try {
       const bookId = req.params.bookId;
@@ -397,43 +389,6 @@ class Controller {
       await book.destroy(); // Hapus dari database
 
       res.redirect(`/books?userId=${userId}`);
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
-  // ==== CATEGORIES ====
-  static async categoryHome(req, res) {
-    try {
-      // TODO: List categories
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
-  static async categoryGetAdd(req, res) {
-    try {
-      // TODO: Render add category form
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
-  static async categoryHandleAdd(req, res) {
-    try {
-      // TODO: Handle add category
-    } catch (err) {
-      console.log(err);
-      res.send(err);
-    }
-  }
-
-  static async categoryDetail(req, res) {
-    try {
-      // TODO: Show detail category
     } catch (err) {
       console.log(err);
       res.send(err);

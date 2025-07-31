@@ -48,7 +48,8 @@
           <td><%= book.description %></td>
           <td><%= book.Category.name %></td>
           <td>
-            <% if (!book.Loans || book.Loans.length === 0) { %>
+            <% const currentLoan = book.Loans?.find(loan => !loan.returnDate);
+            %> <% if (!currentLoan) { %>
             <form
               method="POST"
               action="/books/<%= book.id %>/borrow?userId=<%= userId %>"
@@ -58,6 +59,18 @@
                 style="background-color: green; color: white"
               >
                 Borrow
+              </button>
+            </form>
+            <% } else if (currentLoan && currentLoan.UserId == userId) { %>
+            <form
+              method="POST"
+              action="/loans/<%= currentLoan.id %>/return?userId=<%= userId %>"
+            >
+              <button
+                type="submit"
+                style="background-color: orange; color: white"
+              >
+                Return
               </button>
             </form>
             <% } else { %>
