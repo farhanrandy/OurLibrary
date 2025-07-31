@@ -1,59 +1,58 @@
-const { where } = require('sequelize');
-const { User, Profile, Loan, Book, Category } = require('../models/index');
-const bcrypt = require('bcryptjs');
+const { where } = require("sequelize");
+const { User, Profile, Loan, Book, Category } = require("../models/index");
+const bcrypt = require("bcryptjs");
 class Controller {
   // Home route
   static async home(req, res) {
     try {
-      res.render('home');
+      res.render("home");
     } catch (err) {
       console.log(err);
       res.send(err);
     }
   }
-  static async login(req, res){
+  static async login(req, res) {
     try {
-      res.render('login')
+      res.render("login");
     } catch (error) {
       console.log(error);
-      res.send(error)
-      
+      res.send(error);
     }
   }
-  static async loginHandle(req, res){
+  static async loginHandle(req, res) {
     try {
-    const { email, password } = req.body;
+      const { email, password } = req.body;
 
-    const user = await User.findOne({
-      where: { email }
-    });
+      const user = await User.findOne({
+        where: { email },
+      });
 
-   if (!user || !(await bcrypt.compare(password, user.password))) {
-  res.render('login', { error: 'Invalid email or password' });
-} else {
-      // Login sukses
-      const userId = user.id;
-      res.redirect(`/books?userId=${userId}`);
+      if (!user || !(await bcrypt.compare(password, user.password))) {
+        res.render("login", { error: "Invalid email or password" });
+      } else {
+        // Login sukses
+        const userId = user.id;
+        res.redirect(`/books?userId=${userId}`);
+      }
+    } catch (err) {
+      console.log(err);
+      res.send(err);
     }
-  } catch (err) {
-    console.log(err);
-    res.send(err);
-  }
   }
   static async logoutHandle(req, res) {
-  try {
-    await new Promise((resolve, reject) => {
-      req.session.destroy((err) => {
-        if (err) return reject(err);
-        resolve();
+    try {
+      await new Promise((resolve, reject) => {
+        req.session.destroy((err) => {
+          if (err) return reject(err);
+          resolve();
+        });
       });
-    });
-    res.redirect('/login');
-  } catch (err) {
-    console.log('Logout error:', err);
-    res.redirect('/');
+      res.redirect("/login");
+    } catch (err) {
+      console.log("Logout error:", err);
+      res.redirect("/");
+    }
   }
-}
 
   // ==== USERS ====
   static async userHome(req, res) {
@@ -67,7 +66,7 @@ class Controller {
 
   static async userGetAdd(req, res) {
     try {
-      res.render('addUser')
+      res.render("addUser");
     } catch (err) {
       console.log(err);
       res.send(err);
@@ -75,24 +74,29 @@ class Controller {
   }
 
   static async userHandleAdd(req, res) {
-     try {
-    const { name, email, password, address, phone } = req.body;
+    try {
+      const { name, email, password, address, phone } = req.body;
 
-    // Buat user baru
-    const newUser = await User.create({ name, email, password, role: "user" });
+      // Buat user baru
+      const newUser = await User.create({
+        name,
+        email,
+        password,
+        role: "user",
+      });
 
-    // Buat profile berdasarkan userId
-    await Profile.create({
-      address: address,
-      phone: phone,
-      UserId: newUser.id
-    });
+      // Buat profile berdasarkan userId
+      await Profile.create({
+        address: address,
+        phone: phone,
+        UserId: newUser.id,
+      });
 
-    res.redirect('/login');
-  } catch (err) {
-    console.log(err);
-    res.send(err);
-  }
+      res.redirect("/login");
+    } catch (err) {
+      console.log(err);
+      res.send(err);
+    }
   }
 
   static async userDetail(req, res) {
@@ -105,66 +109,94 @@ class Controller {
   }
 
   // ==== PROFILES ====
-  static async profileHome(req, res) {
+ static async profileHome(req, res) {
+  try {
+    const userId = req.query.userId;
+
+    const userData = await User.findByPk(userId, {
+      include: [
+        Profile,
+        {
+          model: Loan,
+          include: [Book],
+          required: false
+        }
+      ]
+    });
+    
+
+    res.render("profile", { userData, userId });
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
+}
+
+  
+  static async loanHandleReturn(req, res) {
+  try {
+    const loanId = req.params.id;
+    const userId = req.query.userId;
+
+    const loan = await Loan.findByPk(loanId);
+    if (!loan || loan.returnDate) {
+      return res.send("Loan not found or already returned.");
+    }
+
+    loan.returnDate = new Date(); // tandai sudah dikembalikan
+    await loan.save();
+
+    res.redirect(`/profiles/${userId}?userId=${userId}`);
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
+}
+
+  static async profileGetEdit(req, res) {
     try {
-      const userId = req.query.userId;
-      let userData = await User.findByPk(userId, {include: Profile})
-      // console.log(userData);
-      
-      res.render('profile', {userData, userId})
+      const userId = req.params.id;
+
+      const userData = await User.findOne({
+        where: { id: userId },
+        include: Profile,
+      });
+
+      res.render("editProfile", {
+        User: userData,
+        Profile: userData.Profile,
+      });
     } catch (err) {
       console.log(err);
       res.send(err);
     }
   }
 
-  static async profileGetEdit(req, res) {
-    try {
-    const userId = req.params.id;
-
-    const userData = await User.findOne({
-      where: { id: userId },
-      include: Profile
-    });
-
-    res.render('editProfile', {
-      User: userData,
-      Profile: userData.Profile
-    });
-
-  } catch (err) {
-    console.log(err);
-    res.send(err);
-  }
-  }
-
   static async profileHandleEdit(req, res) {
     try {
-    const userId = req.params.id;
+      const userId = req.params.id;
 
-    // Ambil data user beserta profil-nya
-    const userData = await User.findOne({
-      where: { id: userId },
-      include: Profile
-    });
+      // Ambil data user beserta profil-nya
+      const userData = await User.findOne({
+        where: { id: userId },
+        include: Profile,
+      });
 
-    // Update data User
-    userData.name = req.body.name;
-    userData.email = req.body.email;
-    await userData.save();
+      // Update data User
+      userData.name = req.body.name;
+      userData.email = req.body.email;
+      await userData.save();
 
-    // Update data Profile
-    userData.Profile.address = req.body.address;
-    userData.Profile.phone = req.body.phone;
-    await userData.Profile.save();
+      // Update data Profile
+      userData.Profile.address = req.body.address;
+      userData.Profile.phone = req.body.phone;
+      await userData.Profile.save();
 
-    res.redirect(`/profiles/${userData.id}?userId=${userData.id}`) // Balik ke halaman profil setelah update
-
-  } catch (err) {
-    console.error(err);
-    res.send(err);
-  }
-
+      res.redirect(`/profiles/${userData.id}?userId=${userData.id}`); // Balik ke halaman profil setelah update
+    } catch (err) {
+      console.error(err);
+      res.send(err);
+    }
   }
 
   // ==== LOANS ====
@@ -206,38 +238,49 @@ class Controller {
 
   // ==== BOOKS ====
   static async bookHome(req, res) {
-  try {
-    const { userId, search } = req.query; // ⬅️ ambil parameter search juga
+    try {
+      const { userId, search } = req.query; // ⬅️ ambil parameter search juga
 
-    let books;
-    if (search) {
-      // ⬅️ kalau ada keyword pencarian, pakai static method
-      books = await Book.searchByTitle(search);
-    } else {
-      // ⬅️ default ambil semua buku
-      books = await Book.findAll({ include: Category });
+      let books;
+      if (search) {
+        // ⬅️ kalau ada keyword pencarian, pakai static method
+        books = await Book.searchByTitle(search);
+      } else {
+        // ⬅️ default ambil semua buku
+        books = await Book.findAll({
+          include: [
+            Category,
+            {
+              model: Loan,
+              where: {
+                returnDate: null,
+              },
+              required: false, // ⬅️ penting biar book tanpa loan tetap tampil
+            },
+          ],
+        });
+      }
+
+      let profile = null;
+      if (userId) {
+        profile = await Profile.findOne({
+          where: { UserId: userId },
+          include: User,
+        });
+      }
+
+      const role = profile?.User?.role || "guest"; // ⬅️ optional, buat role di view
+      res.render("books", { data: books, profile, userId, role, search }); // ⬅️ kirim search ke EJS biar bisa diisi ulang
+    } catch (err) {
+      console.log("Controller error:", err);
+      res.send(err);
     }
-
-    let profile = null;
-    if (userId) {
-      profile = await Profile.findOne({
-        where: { UserId: userId },
-        include: User
-      });
-    }
-
-    const role = profile?.User?.role || 'guest'; // ⬅️ optional, buat role di view
-    res.render('books', { data: books, profile, userId, role, search }); // ⬅️ kirim search ke EJS biar bisa diisi ulang
-  } catch (err) {
-    console.log('Controller error:', err);
-    res.send(err);
   }
-}
 
   static async bookGetAdd(req, res) {
     try {
-      let categoryData = await Category.findAll()
-      res.render('addBook', {categoryData})
+      let categoryData = await Category.findAll();
+      res.render("addBook", { categoryData });
     } catch (err) {
       console.log(err);
       res.send(err);
@@ -246,96 +289,118 @@ class Controller {
 
   static async bookHandleAdd(req, res) {
     try {
-      const userId = req.query.userId
+      const userId = req.query.userId;
       const { title, authorName, imageURL, description, CategoryId } = req.body;
-    await Book.create({
-      title,
-      authorName,
-      imageURL,
-      description,
-      CategoryId: Number(CategoryId)
-    });
-    res.redirect(`/books?userId=${userId}`);
+      await Book.create({
+        title,
+        authorName,
+        imageURL,
+        description,
+        CategoryId: Number(CategoryId),
+      });
+      res.redirect(`/books?userId=${userId}`);
     } catch (err) {
       console.log(err);
       res.send(err);
     }
   }
-
-  static async bookDetail(req, res) {
+  static async bookBorrowHandle(req, res) {
     try {
-      // TODO: Show detail book
-    } catch (err) {
-      console.log(err);
-      res.send(err);
+      const { userId } = req.query;
+      const bookId = req.params.bookId;
+
+      // 1️⃣ Cek apakah buku sedang dipinjam
+      const existingLoan = await Loan.findOne({
+        where: {
+          BookId: bookId,
+          returnDate: null, // berarti belum dikembalikan
+        },
+      });
+
+      if (existingLoan) {
+        // 2️⃣ Kalau udah dipinjam, jangan bisa dipinjam lagi
+        return res.send("This book is currently borrowed.");
+      }
+
+      // 3️⃣ Kalau belum dipinjam, create data peminjaman
+      await Loan.create({
+        UserId: userId,
+        BookId: bookId,
+        borrowDate: new Date(),
+        returnDate: null,
+      });
+
+      // 4️⃣ Redirect balik ke list buku
+      res.redirect(`/books?userId=${userId}`);
+    } catch (error) {
+      console.log(error);
+      res.send(error);
     }
   }
 
   static async bookGetEdit(req, res) {
     try {
-    const bookId = req.params.bookId;
-    const userId = req.query.userId;
+      const bookId = req.params.bookId;
+      const userId = req.query.userId;
 
-    // Ambil data buku berdasarkan ID
-    const book = await Book.findByPk(bookId);
-    if (!book) return res.status(404).send('Book not found');
+      // Ambil data buku berdasarkan ID
+      const book = await Book.findByPk(bookId);
+      if (!book) return res.status(404).send("Book not found");
 
-    // Ambil semua kategori buat dropdown
-    const categoryData = await Category.findAll();
+      // Ambil semua kategori buat dropdown
+      const categoryData = await Category.findAll();
 
-    res.render('editBook', {
-      book,
-      categoryData,
-      userId
-    });
-  } catch (err) {
-    console.log(err);
-    res.send(err);
-  }
+      res.render("editBook", {
+        book,
+        categoryData,
+        userId,
+      });
+    } catch (err) {
+      console.log(err);
+      res.send(err);
+    }
   }
 
   static async bookHandleEdit(req, res) {
     try {
-    const { userId } = req.query;
-    const bookId = req.params.bookId;
-    const { title, authorName, imageURL, description, CategoryId } = req.body;
+      const { userId } = req.query;
+      const bookId = req.params.bookId;
+      const { title, authorName, imageURL, description, CategoryId } = req.body;
 
-    // Cari data buku dulu
-    const book = await Book.findByPk(bookId);
-    if (!book) return res.status(404).send('Book not found');
+      // Cari data buku dulu
+      const book = await Book.findByPk(bookId);
+      if (!book) return res.status(404).send("Book not found");
 
-    // Update nilai-nya
-    book.title = title;
-    book.authorName = authorName;
-    book.imageURL = imageURL;
-    book.description = description;
-    book.CategoryId = Number(CategoryId);
+      // Update nilai-nya
+      book.title = title;
+      book.authorName = authorName;
+      book.imageURL = imageURL;
+      book.description = description;
+      book.CategoryId = Number(CategoryId);
 
-    await book.save(); // Simpan ke DB
+      await book.save(); // Simpan ke DB
 
-    res.redirect(`/books?userId=${userId}`);
-  } catch (err) {
-    console.log(err);
-    res.send(err);
-  }
-
+      res.redirect(`/books?userId=${userId}`);
+    } catch (err) {
+      console.log(err);
+      res.send(err);
+    }
   }
 
   static async bookDelete(req, res) {
-     try {
-    const { userId } = req.query; // biar bisa redirect balik pakai userId
-    const bookId = req.params.bookId;
+    try {
+      const { userId } = req.query; // biar bisa redirect balik pakai userId
+      const bookId = req.params.bookId;
 
-    // Cari dulu bukunya buat validasi (optional)
-    const book = await Book.findByPk(bookId);
-    await book.destroy(); // Hapus dari database
+      // Cari dulu bukunya buat validasi (optional)
+      const book = await Book.findByPk(bookId);
+      await book.destroy(); // Hapus dari database
 
-    res.redirect(`/books?userId=${userId}`);
-  } catch (err) {
-    console.log(err);
-    res.send(err);
-  }
-
+      res.redirect(`/books?userId=${userId}`);
+    } catch (err) {
+      console.log(err);
+      res.send(err);
+    }
   }
 
   // ==== CATEGORIES ====

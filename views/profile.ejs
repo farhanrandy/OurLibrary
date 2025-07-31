@@ -14,5 +14,35 @@
   <p>Email: <%= userData.email %></p>
   <p>Address: <%= userData.Profile.address %></p>
   <p>Phone: <%= userData.Profile.phone %></p>
+  <h2>Borrowed Books</h2>
+<% if (userData.Loans && userData.Loans.length > 0) { %>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Borrow Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% userData.Loans.forEach(loan => { %>
+        <tr>
+          <td><%= loan.Book.title %></td>
+          <td><%= loan.borrowDate.toDateString() %></td>
+          <td>
+  <% if (!loan.returnDate) { %>
+    <span style="color: red;">Not Returned Yet</span>
+  <% } else { %>
+    <span style="color: green;"><%= loan.returnDate.toDateString() %></span>
+  <% } %>
+</td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } else { %>
+  <p>No borrowed books at the moment.</p>
+<% } %>
+
 </body>
 </html>
