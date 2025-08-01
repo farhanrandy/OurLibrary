@@ -118,7 +118,7 @@ class Controller {
           },
         ],
       })
-      res.render("profile", { userData, userId, formatDate })
+      res.render("profile", { userData, userId })
     } catch (err) {
       console.log(err)
       res.send(err)
@@ -330,11 +330,11 @@ class Controller {
       const bookId = req.params.bookId
       const { title, authorName, imageURL, description, CategoryId } = req.body
 
-      // Cari data buku dulu
+    
       const book = await Book.findByPk(bookId)
       if (!book) return res.status(404).send("Book not found")
 
-      // Update nilai-nya
+    
       book.title = title
       book.authorName = authorName
       book.imageURL = imageURL
@@ -352,12 +352,12 @@ class Controller {
 
   static async bookDelete(req, res) {
     try {
-      const { userId } = req.query // biar bisa redirect balik pakai userId
+      const { userId } = req.query
       const bookId = req.params.bookId
 
-      // Cari dulu bukunya buat validasi (optional)
+
       const book = await Book.findByPk(bookId)
-      await book.destroy() // Hapus dari database
+      await book.destroy() 
 
       res.redirect(`/books?userId=${userId}`)
     } catch (err) {

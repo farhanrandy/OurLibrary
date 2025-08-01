@@ -1,4 +1,5 @@
 'use strict';
+let formatDate = require('../helpers/formatDate')
 const {
   Model
 } = require('sequelize');
@@ -14,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
       Loan.belongsTo(models.User, { foreignKey: 'UserId' });
       Loan.belongsTo(models.Book, { foreignKey: 'BookId' });
 ;
+    }
+    get borrowFormat(){
+      return formatDate(this.borrowDate)
+    }
+    get returnFormat(){
+      return formatDate(this.returnDate)
     }
   }
   Loan.init({

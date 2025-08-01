@@ -2,11 +2,11 @@ function preserveUserId(req, res, next) {
   const userId = req.query.userId || req.body.userId;
 
   if (userId) {
-    res.locals.userId = userId; // inject ke EJS
-    req.userId = userId;        // inject ke route/controller
+    res.locals.userId = userId; 
+    req.userId = userId;        
   }
 
-  next(); // lanjut ke route handler berikutnya
+  next();
 }
 
 module.exports = preserveUserId;
