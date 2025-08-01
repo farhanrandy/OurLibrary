@@ -228,7 +228,9 @@ class Controller {
   static async bookHandleAdd(req, res) {
     try {
       const userId = req.query.userId
-      const { title, authorName, imageURL, description, CategoryId } = req.body
+      const { title, authorName, description, CategoryId } = req.body
+      const imageURL = req.file ? req.file.filename : null;
+
       await Book.create({
         title,
         authorName,
