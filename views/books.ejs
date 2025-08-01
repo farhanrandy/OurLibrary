@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles/bookList.css">
+    <title>Book List</title>
+  </head>
+  <body>
+    <%- include('partials/_nav', { profile: profile }) %>
+    <h1>Book Collection</h1>
+    <% if (profile && profile.User && profile.User.role === 'admin') { %>
+    <a href="/books/add?userId=<%= userId %>">Add Book</a>
+    <% } %>
+    <form method="GET" action="/books" style="margin-bottom: 16px">
+      <input
+        type="text"
+        name="search"
+        placeholder="Search books by title..."
+        value="<%= search || '' %>"
+      />
+      <input type="hidden" name="userId" value="<%= userId %>" />
+      <!-- biar userId tetep kepassing -->
+      <button type="submit">Search</button>
+    </form>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Status</th>
+          <% if (profile && profile.User && profile.User.role === 'admin') { %>
+          <th>Actions</th>
+          <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((book, index) => { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= book.title %></td>
+          <td><%= book.authorName %></td>
+          <td>
+            <img src="<%= book.imageURL %>" alt="cover" width="100" />
+          </td>
+          <td><%= book.description %></td>
+          <td><%= book.Category.name %></td>
+          <td>
+            <% const currentLoan = book.Loans?.find(loan => !loan.returnDate);
+            %> <% if (!currentLoan) { %>
+            <form
+              method="POST"
+              action="/books/<%= book.id %>/borrow?userId=<%= userId %>"
+            >
+              <button
+                type="submit"
+                style="background-color: green; color: white"
+              >
+                Borrow
+              </button>
+            </form>
+            <% } else if (currentLoan && currentLoan.UserId == userId) { %>
+            <form
+              method="POST"
+              action="/loans/<%= currentLoan.id %>/return?userId=<%= userId %>"
+            >
+              <button
+                type="submit"
+                style="background-color: orange; color: white"
+              >
+                Return
+              </button>
+            </form>
+            <% } else { %>
+            <button disabled style="background-color: red; color: white">
+              Borrowed
+            </button>
+            <% } %>
+          </td>
+          <% if (profile && profile.User && profile.User.role === 'admin') { %>
+          <td>
+            <a href="/books/<%= book.id %>/edit?userId=<%= userId %>">
+              <button>Edit</button>
+            </a>
+            <a href="/books/<%= book.id %>/delete?userId=<%= userId %>">
+              <button>Delete</button>
+            </a>
+          </td>
+          <% } %>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

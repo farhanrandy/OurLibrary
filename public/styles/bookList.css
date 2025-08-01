@@ -1,0 +1,113 @@
+/* Layout dasar */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 40px;
+  color: #333;
+}
+
+/* Judul utama */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+/* Tombol Add Book */
+a[href*="/books/add"] {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+a[href*="/books/add"] button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a[href*="/books/add"] button:hover {
+  background-color: #2980b9;
+}
+
+/* Form search */
+form[action="/books"] {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #27ae60;
+}
+
+/* Tabel buku */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+thead {
+  background-color: #ecf0f1;
+  color: #34495e;
+}
+
+img {
+  border-radius: 4px;
+}
+
+/* Status & Action buttons */
+td button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+td button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+td button + a,
+td a + a {
+  margin-left: 8px;
+}
+
+/* Optional: Smooth transitions */
+button {
+  transition: background-color 0.3s ease;
+}

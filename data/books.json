@@ -1,302 +1,352 @@
 [
   {
-    "id": 1,
-    "title": "Clean Code",
-    "authorName": "Robert C. Martin",
-    "categoryId": 1
+    "title": "The Great Gatsby",
+    "authorName": "F. Scott Fitzgerald",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/ab/The_Great_Gatsby_Cover_1925_Retouched.jpg",
+    "description": "A story of the Jazz Age.",
+    "CategoryId": 1
   },
   {
-    "id": 2,
-    "title": "Eloquent JavaScript",
-    "authorName": "Marijn Haverbeke",
-    "categoryId": 2
-  },
-  {
-    "id": 3,
-    "title": "Atomic Habits",
-    "authorName": "James Clear",
-    "categoryId": 3
-  },
-  {
-    "id": 4,
-    "title": "The Pragmatic Programmer",
-    "authorName": "Andy Hunt",
-    "categoryId": 1
-  },
-  {
-    "id": 5,
-    "title": "JavaScript: The Good Parts",
-    "authorName": "Douglas Crockford",
-    "categoryId": 2
-  },
-  {
-    "id": 6,
-    "title": "Deep Work",
-    "authorName": "Cal Newport",
-    "categoryId": 3
-  },
-  {
-    "id": 7,
-    "title": "You Don't Know JS",
-    "authorName": "Kyle Simpson",
-    "categoryId": 2
-  },
-  {
-    "id": 8,
-    "title": "Refactoring",
-    "authorName": "Martin Fowler",
-    "categoryId": 1
-  },
-  {
-    "id": 9,
-    "title": "The Power of Habit",
-    "authorName": "Charles Duhigg",
-    "categoryId": 3
-  },
-  {
-    "id": 10,
-    "title": "Introduction to Algorithms",
-    "authorName": "Cormen et al.",
-    "categoryId": 1
-  },
-  {
-    "id": 11,
-    "title": "The Clean Coder",
-    "authorName": "Robert C. Martin",
-    "categoryId": 1
-  },
-  {
-    "id": 12,
-    "title": "Grokking Algorithms",
-    "authorName": "Aditya Bhargava",
-    "categoryId": 1
-  },
-  {
-    "id": 13,
-    "title": "The Mythical Man-Month",
-    "authorName": "Fred Brooks",
-    "categoryId": 1
-  },
-  {
-    "id": 14,
-    "title": "Don't Make Me Think",
-    "authorName": "Steve Krug",
-    "categoryId": 5
-  },
-  {
-    "id": 15,
-    "title": "Design of Everyday Things",
-    "authorName": "Don Norman",
-    "categoryId": 5
-  },
-  {
-    "id": 16,
-    "title": "Thinking, Fast and Slow",
-    "authorName": "Daniel Kahneman",
-    "categoryId": 6
-  },
-  {
-    "id": 17,
-    "title": "Start With Why",
-    "authorName": "Simon Sinek",
-    "categoryId": 7
-  },
-  {
-    "id": 18,
-    "title": "Zero to One",
-    "authorName": "Peter Thiel",
-    "categoryId": 7
-  },
-  {
-    "id": 19,
-    "title": "Hooked",
-    "authorName": "Nir Eyal",
-    "categoryId": 7
-  },
-  {
-    "id": 20,
-    "title": "Drive",
-    "authorName": "Daniel Pink",
-    "categoryId": 7
-  },
-  {
-    "id": 21,
-    "title": "Rework",
-    "authorName": "Jason Fried",
-    "categoryId": 7
-  },
-  {
-    "id": 22,
-    "title": "Cracking the Coding Interview",
-    "authorName": "Gayle Laakmann",
-    "categoryId": 1
-  },
-  {
-    "id": 23,
-    "title": "Python Crash Course",
-    "authorName": "Eric Matthes",
-    "categoryId": 1
-  },
-  {
-    "id": 24,
-    "title": "Fluent Python",
-    "authorName": "Luciano Ramalho",
-    "categoryId": 1
-  },
-  {
-    "id": 25,
-    "title": "Learning React",
-    "authorName": "Alex Banks",
-    "categoryId": 2
-  },
-  {
-    "id": 26,
-    "title": "Learning Web Design",
-    "authorName": "Jennifer Robbins",
-    "categoryId": 2
-  },
-  {
-    "id": 27,
-    "title": "Modern CSS",
-    "authorName": "Joe Attardi",
-    "categoryId": 2
-  },
-  {
-    "id": 28,
-    "title": "AI Superpowers",
-    "authorName": "Kai-Fu Lee",
-    "categoryId": 10
-  },
-  {
-    "id": 29,
-    "title": "Hands-On Machine Learning",
-    "authorName": "Aurlien Gron",
-    "categoryId": 10
-  },
-  {
-    "id": 30,
-    "title": "Deep Learning",
-    "authorName": "Ian Goodfellow",
-    "categoryId": 10
-  },
-  {
-    "id": 31,
-    "title": "Pattern Recognition and Machine Learning",
-    "authorName": "Christopher Bishop",
-    "categoryId": 10
-  },
-  {
-    "id": 32,
-    "title": "Make Your Bed",
-    "authorName": "William H. McRaven",
-    "categoryId": 3
-  },
-  {
-    "id": 33,
-    "title": "The 5 AM Club",
-    "authorName": "Robin Sharma",
-    "categoryId": 3
-  },
-  {
-    "id": 34,
-    "title": "Can't Hurt Me",
-    "authorName": "David Goggins",
-    "categoryId": 3
-  },
-  {
-    "id": 35,
-    "title": "Ikigai",
-    "authorName": "Francesc Miralles",
-    "categoryId": 3
-  },
-  {
-    "id": 36,
-    "title": "Man's Search for Meaning",
-    "authorName": "Viktor Frankl",
-    "categoryId": 6
-  },
-  {
-    "id": 37,
-    "title": "The Art of War",
-    "authorName": "Sun Tzu",
-    "categoryId": 8
-  },
-  {
-    "id": 38,
     "title": "1984",
     "authorName": "George Orwell",
-    "categoryId": 8
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/0/0c/1984_first_edition_cover.jpg",
+    "description": "A dystopian novel.",
+    "CategoryId": 2
   },
   {
-    "id": 39,
-    "title": "Brave New World",
-    "authorName": "Aldous Huxley",
-    "categoryId": 8
-  },
-  {
-    "id": 40,
     "title": "To Kill a Mockingbird",
     "authorName": "Harper Lee",
-    "categoryId": 8
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
+    "description": "A tale of justice.",
+    "CategoryId": 3
   },
   {
-    "id": 41,
+    "title": "Pride and Prejudice",
+    "authorName": "Jane Austen",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780141199078-L.jpg",
+    "description": "A romantic novel.",
+    "CategoryId": 4
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "authorName": "J.D. Salinger",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780316769488-L.jpg",
+    "description": "A coming-of-age story.",
+    "CategoryId": 5
+  },
+  {
+    "title": "Brave New World",
+    "authorName": "Aldous Huxley",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780060850524-L.jpg",
+    "description": "A futuristic society.",
+    "CategoryId": 2
+  },
+  {
+    "title": "The Hobbit",
+    "authorName": "J.R.R. Tolkien",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
+    "description": "An epic adventure.",
+    "CategoryId": 6
+  },
+  {
+    "title": "Animal Farm",
+    "authorName": "George Orwell",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780451526342-L.jpg",
+    "description": "A political allegory.",
+    "CategoryId": 2
+  },
+  {
+    "title": "Lord of the Rings",
+    "authorName": "J.R.R. Tolkien",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780618640157-L.jpg",
+    "description": "A fantasy epic.",
+    "CategoryId": 6
+  },
+  {
+    "title": "Jane Eyre",
+    "authorName": "Charlotte Bront\u00eb",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
+    "description": "A gothic romance.",
+    "CategoryId": 4
+  },
+  {
+    "title": "Dune",
+    "authorName": "Frank Herbert",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg",
+    "description": "A sci-fi saga.",
+    "CategoryId": 7
+  },
+  {
+    "title": "The Odyssey",
+    "authorName": "Homer",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "An epic poem.",
+    "CategoryId": 8
+  },
+  {
+    "title": "Fahrenheit 451",
+    "authorName": "Ray Bradbury",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9781451673319-L.jpg",
+    "description": "A book-burning dystopia.",
+    "CategoryId": 2
+  },
+  {
+    "title": "Moby Dick",
+    "authorName": "Herman Melville",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9781503280786-L.jpg",
+    "description": "A whaling tale.",
+    "CategoryId": 9
+  },
+  {
+    "title": "Wuthering Heights",
+    "authorName": "Emily Bront\u00eb",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780141439556-L.jpg",
+    "description": "A dark romance.",
+    "CategoryId": 4
+  },
+  {
+    "title": "The Road",
+    "authorName": "Cormac McCarthy",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A post-apocalyptic journey.",
+    "CategoryId": 10
+  },
+  {
+    "title": "Harry Potter",
+    "authorName": "J.K. Rowling",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780439708180-L.jpg",
+    "description": "A wizarding adventure.",
+    "CategoryId": 6
+  },
+  {
+    "title": "Crime and Punishment",
+    "authorName": "Fyodor Dostoevsky",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A psychological thriller.",
+    "CategoryId": 3
+  },
+  {
+    "title": "The Alchemist",
+    "authorName": "Paulo Coelho",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg",
+    "description": "A philosophical journey.",
+    "CategoryId": 5
+  },
+  {
+    "title": "Catch-22",
+    "authorName": "Joseph Heller",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9781451626650-L.jpg",
+    "description": "A war satire.",
+    "CategoryId": 10
+  },
+  {
+    "title": "The Da Vinci Code",
+    "authorName": "Dan Brown",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
+    "description": "A mystery thriller.",
+    "CategoryId": 12
+  },
+  {
+    "title": "The Shining",
+    "authorName": "Stephen King",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780307743657-L.jpg",
+    "description": "A horror classic.",
+    "CategoryId": 13
+  },
+  {
     "title": "Sapiens",
     "authorName": "Yuval Noah Harari",
-    "categoryId": 9
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg",
+    "description": "A history of humankind.",
+    "CategoryId": 14
   },
   {
-    "id": 42,
-    "title": "Homo Deus",
-    "authorName": "Yuval Noah Harari",
-    "categoryId": 9
+    "title": "Leaves of Grass",
+    "authorName": "Walt Whitman",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A poetry collection.",
+    "CategoryId": 15
   },
   {
-    "id": 43,
-    "title": "Educated",
-    "authorName": "Tara Westover",
-    "categoryId": 9
+    "title": "The Girl with the Dragon Tattoo",
+    "authorName": "Stieg Larsson",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A gripping mystery.",
+    "CategoryId": 12
   },
   {
-    "id": 44,
+    "title": "Gone Girl",
+    "authorName": "Gillian Flynn",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A psychological thriller.",
+    "CategoryId": 16
+  },
+  {
+    "title": "Charlotte's Web",
+    "authorName": "E.B. White",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780064400558-L.jpg",
+    "description": "A children's classic.",
+    "CategoryId": 17
+  },
+  {
+    "title": "Atomic Habits",
+    "authorName": "James Clear",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A self-improvement guide.",
+    "CategoryId": 18
+  },
+  {
     "title": "A Brief History of Time",
     "authorName": "Stephen Hawking",
-    "categoryId": 9
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A science classic.",
+    "CategoryId": 19
   },
   {
-    "id": 45,
-    "title": "Mathematics for Machine Learning",
-    "authorName": "Marc Peter Deisenroth",
-    "categoryId": 10
+    "title": "Good Omens",
+    "authorName": "Neil Gaiman",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A humorous satire.",
+    "CategoryId": 20
   },
   {
-    "id": 46,
-    "title": "The Elements of Statistical Learning",
-    "authorName": "Hastie et al.",
-    "categoryId": 10
+    "title": "The Stand",
+    "authorName": "Stephen King",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A post-apocalyptic epic.",
+    "CategoryId": 10
   },
   {
-    "id": 47,
-    "title": "How to Win Friends and Influence People",
-    "authorName": "Dale Carnegie",
-    "categoryId": 3
+    "title": "Treasure Island",
+    "authorName": "Robert Louis Stevenson",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A pirate adventure.",
+    "CategoryId": 9
   },
   {
-    "id": 48,
-    "title": "Thinking in Systems",
-    "authorName": "Donella Meadows",
-    "categoryId": 9
+    "title": "The Iliad",
+    "authorName": "Homer",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "An epic war poem.",
+    "CategoryId": 8
   },
   {
-    "id": 49,
-    "title": "Algorithms to Live By",
-    "authorName": "Brian Christian",
-    "categoryId": 1
+    "title": "Foundation",
+    "authorName": "Isaac Asimov",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A sci-fi series.",
+    "CategoryId": 7
   },
   {
-    "id": 50,
-    "title": "Code Complete",
-    "authorName": "Steve McConnell",
-    "categoryId": 1
+    "title": "Little Women",
+    "authorName": "Louisa May Alcott",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A family saga.",
+    "CategoryId": 4
+  },
+  {
+    "title": "The Giver",
+    "authorName": "Lois Lowry",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A dystopian tale.",
+    "CategoryId": 2
+  },
+  {
+    "title": "A Game of Thrones",
+    "authorName": "George R.R. Martin",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780553593716-L.jpg",
+    "description": "A fantasy epic.",
+    "CategoryId": 6
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "authorName": "Fyodor Dostoevsky",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A philosophical drama.",
+    "CategoryId": 3
+  },
+  {
+    "title": "The Martian",
+    "authorName": "Andy Weir",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780553418026-L.jpg",
+    "description": "A sci-fi survival story.",
+    "CategoryId": 7
+  },
+  {
+    "title": "Sense and Sensibility",
+    "authorName": "Jane Austen",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A romantic tale.",
+    "CategoryId": 4
+  },
+  {
+    "title": "The Outsiders",
+    "authorName": "S.E. Hinton",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A coming-of-age story.",
+    "CategoryId": 5
+  },
+  {
+    "title": "Dracula",
+    "authorName": "Bram Stoker",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A vampire classic.",
+    "CategoryId": 13
+  },
+  {
+    "title": "The Nightingale",
+    "authorName": "Kristin Hannah",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A historical novel.",
+    "CategoryId": 11
+  },
+  {
+    "title": "Ender's Game",
+    "authorName": "Orson Scott Card",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A sci-fi military tale.",
+    "CategoryId": 7
+  },
+  {
+    "title": "The Secret Garden",
+    "authorName": "Frances Hodgson Burnett",
+    "imageURL": "https://covers.openlibrary.org/b/isbn/9780141321066-L.jpg",
+    "description": "A children's classic.",
+    "CategoryId": 17
+  },
+  {
+    "title": "Meditations",
+    "authorName": "Marcus Aurelius",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A philosophical work.",
+    "CategoryId": 18
+  },
+  {
+    "title": "Neuromancer",
+    "authorName": "William Gibson",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A cyberpunk novel.",
+    "CategoryId": 7
+  },
+  {
+    "title": "The Count of Monte Cristo",
+    "authorName": "Alexandre Dumas",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A tale of revenge.",
+    "CategoryId": 9
+  },
+  {
+    "title": "Where the Crawdads Sing",
+    "authorName": "Delia Owens",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "A nature drama.",
+    "CategoryId": 3
+  },
+  {
+    "title": "Slaughterhouse-Five",
+    "authorName": "Kurt Vonnegut",
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png",
+    "description": "An anti-war satire.",
+    "CategoryId": 20
   }
 ]
