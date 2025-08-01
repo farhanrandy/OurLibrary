@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 
 
     }
+   
   }
   Profile.init({
     address: DataTypes.STRING,

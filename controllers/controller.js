@@ -118,7 +118,7 @@ class Controller {
           },
         ],
       })
-      res.render("profile", { userData, userId, formatDate })
+      res.render("profile", { userData, userId })
     } catch (err) {
       console.log(err)
       res.send(err)

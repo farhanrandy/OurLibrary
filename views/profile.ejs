@@ -29,12 +29,12 @@
         <% userData.Loans.forEach(loan => { %>
         <tr>
           <td><%= loan.Book.title %></td>
-          <td><%= formatDate(loan.borrowDate) %></td>
+          <td><%= loan.borrowFormat %></td>
           <td>
             <% if (!loan.returnDate) { %>
             <span style="color: red">Not Returned Yet</span>
             <% } else { %>
-            <span style="color: green"><%= formatDate(loan.returnDate) %></span>
+            <span style="color: green"><%= loan.returnFormat %></span>
             <% } %>
           </td>
         </tr>
